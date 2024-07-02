@@ -12,7 +12,7 @@ export default function ButtonAppBar() {
    const isOnSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
    return (
-      <Box mb={5} sx={{ flexGrow: 1 }}>
+      <Box flexGrow={1}>
          <AppBar position='static'>
             <Toolbar variant='dense'>
                <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
