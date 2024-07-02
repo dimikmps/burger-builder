@@ -37,7 +37,7 @@ const IngredientsListComponent = (): React.JSX.Element => {
          <Box flexGrow={1}>
             <Grid container spacing={2} justifyContent='space-evenly'>
                {availableIngredients.map((ingredient: Ingredient) => (
-                  <Grid item xs={6} sm={4} md={3} lg={2} key={ingredient.id}>
+                  <Grid item xs={12} sm={6} md={4} lg={3} key={ingredient.id}>
                      <Box
                         onClick={() => handleAddIngredientToCurrent(ingredient)}
                         mx={4}
@@ -53,6 +53,7 @@ const IngredientsListComponent = (): React.JSX.Element => {
                            '&:hover': {
                               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.15)',
                            },
+                           minWidth: 'fit-content',
                         }}
                      >
                         {generateIcon(ingredient.id)}

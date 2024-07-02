@@ -54,7 +54,7 @@ const IngredientsProvider = ({ children }: IngredientsProviderProps) => {
    }, [loginToken]);
 
    const addIngredientToCurrent = (ingredient: Ingredient) => {
-      setCurrentIngredients([...currentIngredients, ingredient]);
+      setCurrentIngredients([ingredient, ...currentIngredients]);
    };
 
    const removeIngredientFromCurrent = (index: number) => {
