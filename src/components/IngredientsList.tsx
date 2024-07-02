@@ -1,7 +1,7 @@
 import { Ingredient } from '../interfaces/Ingredient.interface';
 import { useIngredients } from '../contexts/IngredientsContext';
 
-const IngredientsList = () => {
+const IngredientsList = (): React.JSX.Element => {
    const { availableIngredients, addIngredientToCurrent } = useIngredients();
 
    const handleAddIngredientToCurrent = (ingredient: Ingredient) => {

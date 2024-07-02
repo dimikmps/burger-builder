@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Box, Button, Grid, TextField } from '@mui/material';
 
@@ -7,7 +7,7 @@ interface FormValidationProps {
    password: boolean;
 }
 
-const LoginForm = () => {
+const LoginForm = (): React.JSX.Element => {
    const { login } = useAuth();
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');

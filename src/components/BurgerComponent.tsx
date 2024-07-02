@@ -1,6 +1,6 @@
 import { useIngredients } from '../contexts/IngredientsContext';
 
-const BurgerComponent = () => {
+const BurgerComponent = (): React.JSX.Element => {
    const { currentIngredients, removeIngredientFromCurrent } = useIngredients();
 
    const handleRemoveIngredientFromCurrent = (index: number) => {

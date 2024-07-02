@@ -1,21 +1,24 @@
-import IngredientsList from './components/IngredientsList';
+import React from 'react';
 import LoginForm from './components/LoginFormComponent';
+import MainContentContainerComponent from './components/MainContentContainerComponent';
+import HeaderComponent from './components/HeaderComponent/HeaderComponent';
+import IngredientsList from './components/IngredientsList';
 import BurgerComponent from './components/BurgerComponent';
 import { useAuth } from './contexts/AuthContext';
 
-const App = () => {
-   const { loginToken, logout } = useAuth();
+const App = (): React.JSX.Element => {
+   const { loginToken } = useAuth();
 
    return (
       <div>
          {!loginToken ? (
             <LoginForm />
          ) : (
-            <div>
-               <button onClick={logout}>Logout</button>
+            <MainContentContainerComponent>
+               <HeaderComponent />
                <IngredientsList />
                <BurgerComponent />
-            </div>
+            </MainContentContainerComponent>
          )}
       </div>
    );
