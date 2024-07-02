@@ -1,9 +1,9 @@
 import React from 'react';
-import LoginForm from './components/LoginFormComponent';
-import MainContentContainerComponent from './components/MainContentContainerComponent';
+import LoginForm from './components/LoginFormComponent/LoginFormComponent';
+import MainContentContainerComponent from './components/MainContentContainerComponent/MainContentContainerComponent';
 import HeaderComponent from './components/HeaderComponent/HeaderComponent';
-import IngredientsList from './components/IngredientsList';
-import BurgerComponent from './components/BurgerComponent';
+import IngredientsListComponent from './components/IngredientsListComponent/IngredientsListComponent';
+import BurgerComponent from './components/BurgerComponent/BurgerComponent';
 import { useAuth } from './contexts/AuthContext';
 
 const App = (): React.JSX.Element => {
@@ -16,7 +16,7 @@ const App = (): React.JSX.Element => {
          ) : (
             <MainContentContainerComponent>
                <HeaderComponent />
-               <IngredientsList />
+               <IngredientsListComponent />
                <BurgerComponent />
             </MainContentContainerComponent>
          )}

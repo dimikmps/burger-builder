@@ -1,7 +1,7 @@
-import { Ingredient } from '../interfaces/Ingredient.interface';
-import { useIngredients } from '../contexts/IngredientsContext';
+import { Ingredient } from '../../interfaces/Ingredient.interface';
+import { useIngredients } from '../../contexts/IngredientsContext';
 
-const IngredientsList = (): React.JSX.Element => {
+const IngredientsListComponent = (): React.JSX.Element => {
    const { availableIngredients, addIngredientToCurrent } = useIngredients();
 
    const handleAddIngredientToCurrent = (ingredient: Ingredient) => {
@@ -20,4 +20,4 @@ const IngredientsList = (): React.JSX.Element => {
    );
 };
 
-export default IngredientsList;
+export default IngredientsListComponent;

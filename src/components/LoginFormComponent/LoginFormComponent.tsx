@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { Box, Button, Grid, TextField } from '@mui/material';
 
 interface FormValidationProps {
