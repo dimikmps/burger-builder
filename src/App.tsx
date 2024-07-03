@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from './components/LoginFormComponent/LoginFormComponent';
+import LoginFormComponent from './components/LoginFormComponent/LoginFormComponent';
 import MainContentContainerComponent from './components/MainContentContainerComponent/MainContentContainerComponent';
 import HeaderComponent from './components/HeaderComponent/HeaderComponent';
 import IngredientsListComponent from './components/IngredientsListComponent/IngredientsListComponent';
@@ -12,7 +12,7 @@ const App = (): React.JSX.Element => {
    return (
       <div>
          {!loginToken ? (
-            <LoginForm />
+            <LoginFormComponent />
          ) : (
             <MainContentContainerComponent>
                <HeaderComponent />

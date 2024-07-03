@@ -7,7 +7,12 @@ interface FormValidationProps {
    password: boolean;
 }
 
-const LoginForm = (): React.JSX.Element => {
+/**
+ * Login Form
+ * Represents the login/authentication form
+ * @returns {React.JSX.Element} - The LoginFormComponent JSX element
+ */
+const LoginFormComponent = (): React.JSX.Element => {
    const { login } = useAuth();
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
@@ -43,14 +48,14 @@ const LoginForm = (): React.JSX.Element => {
       }
    };
 
-   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { value } = e.target;
+   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { value } = event.target;
 
       setUsername(value);
    };
 
-   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { value } = e.target;
+   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { value } = event.target;
 
       setPassword(value);
    };
@@ -61,7 +66,6 @@ const LoginForm = (): React.JSX.Element => {
          height='100vh'
          display='flex'
          justifyContent='space-around'
-         sx={{ borderColor: '10px solid red' }}
       >
          <form onSubmit={handleSubmit} style={{ alignContent: 'center' }}>
             <Grid container spacing={2}>
@@ -97,4 +101,4 @@ const LoginForm = (): React.JSX.Element => {
    );
 };
 
-export default LoginForm;
+export default LoginFormComponent;

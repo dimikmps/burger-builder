@@ -7,9 +7,9 @@ interface MainContentContainerComponentProps {
 
 /**
  * Main Content Container
- * Returns content based on the url/routing
- * @param {React.JSX.Element} routeComponent - The component/view to be returned.
- * @returns {JSX.Element} - The MainContentContainerComponent JSX element, wrapping component provided by the router.
+ * Represents the container for all visible content
+ * @param {ReactNode} children - The underlying children components
+ * @returns {React.JSX.Element} - The MainContentContainerComponent JSX element
  */
 const MainContentContainerComponent = ({ children }: MainContentContainerComponentProps): React.JSX.Element => {
    return (

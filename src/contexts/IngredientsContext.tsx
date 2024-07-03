@@ -82,7 +82,7 @@ const useIngredients = (): IngredientsContextType => {
    const context = useContext(IngredientsContext);
 
    if (context === undefined) {
-      throw new Error('An error occured with the Ingredients Context');
+      throw new Error('An error occured upom the ingredients population process');
    }
 
    return context;

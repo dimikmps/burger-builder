@@ -1,10 +1,15 @@
+import { Box, Grid, Typography } from '@mui/material';
 import { Ingredient } from '../../interfaces/Ingredient.interface';
 import { useIngredients } from '../../contexts/IngredientsContext';
-import { Box, Grid, Typography } from '@mui/material';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import EggAltIcon from '@mui/icons-material/EggAlt';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 
+/**
+ * Ingredients List
+ * Represents the pane that enables choosing burger ingredients out of the ones available
+ * @returns {React.JSX.Element} - The IngredientsListComponent JSX element
+ */
 const IngredientsListComponent = (): React.JSX.Element => {
    const { availableIngredients, addIngredientToCurrent } = useIngredients();
 
@@ -47,7 +52,7 @@ const IngredientsListComponent = (): React.JSX.Element => {
                         sx={{
                            padding: 2,
                            backgroundColor: '#fff',
-                           borderRadius: 1,
+                           borderRadius: 5,
                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
                            cursor: 'pointer',
                            '&:hover': {

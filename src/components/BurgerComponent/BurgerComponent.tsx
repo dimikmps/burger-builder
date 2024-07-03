@@ -1,6 +1,11 @@
 import { Box } from '@mui/material';
 import { useIngredients } from '../../contexts/IngredientsContext';
 
+/**
+ * Burger Component
+ * Represents the burger preview, with all (if any) selected ingredients
+ * @returns {React.JSX.Element} - The BurgerComponent JSX element
+ */
 const BurgerComponent = (): React.JSX.Element => {
    const { currentIngredients, removeIngredientFromCurrent } = useIngredients();
 
