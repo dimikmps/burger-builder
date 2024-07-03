@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import axios from 'axios';
 
 interface AuthContextType {
    loginToken: string | null;
@@ -19,9 +18,23 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
    const login = async (name: string, password: string) => {
       try {
-         const response = await axios.post('https://react-interview.xm.com/login', { name, password });
+         const response = await fetch('https://react-interview.xm.com/login', {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, password }),
+         });
 
-         setLoginToken(response.data.token);
+         if (!response.ok) {
+            throw new Error('Network error');
+         }
+
+         const data = await response.json();
+
+         setLoginToken(data.token);
+
+         setError(null); // Clear any previous errors on successful login
       } catch (err) {
          setError(err as Error);
       }

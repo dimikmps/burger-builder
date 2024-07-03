@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { ReactNode } from 'react';
 
-interface MainContentContainerComponentProps {
+type MainContentContainerComponentProps = {
    children: ReactNode;
-}
+};
 
 /**
  * Main Content Container
