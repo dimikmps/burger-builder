@@ -6,7 +6,12 @@ import Button from '@mui/material/Button';
 import { useAuth } from '../../contexts/AuthContext';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-export default function ButtonAppBar() {
+/**
+ * Header
+ * Represents the app-wide header
+ * @returns {React.JSX.Element} - The HeaderComponent JSX element
+ */
+const HeaderComponent = (): React.JSX.Element => {
    const { logout } = useAuth();
    const theme = useTheme();
    const isOnSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -25,4 +30,6 @@ export default function ButtonAppBar() {
          </AppBar>
       </Box>
    );
-}
+};
+
+export default HeaderComponent;

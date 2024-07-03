@@ -19,15 +19,17 @@ const IngredientsContext = createContext<IngredientsContextType | undefined>(und
 
 const IngredientsProvider = ({ children }: IngredientsProviderProps) => {
    const { loginToken } = useAuth();
-   const [availableIngredients, setAvailableIngredients] = useState<Ingredient[]>([]);
 
+   const [availableIngredients, setAvailableIngredients] = useState<Ingredient[]>([]);
    const [currentIngredients, setCurrentIngredients] = useState<Ingredient[]>([]);
+
    const [isLoading, setIsLoading] = useState<boolean>(true);
    const [error, setError] = useState<Error | null>(null);
 
    useEffect(() => {
       const fetchIngredients = async () => {
          setIsLoading(true);
+
          try {
             const response = await fetch('https://react-interview.xm.com/ingredients', {
                headers: {
@@ -40,6 +42,7 @@ const IngredientsProvider = ({ children }: IngredientsProviderProps) => {
             }
 
             const data: Ingredient[] = await response.json();
+
             setAvailableIngredients(data);
          } catch (err) {
             setError(err as Error);
@@ -82,7 +85,7 @@ const useIngredients = (): IngredientsContextType => {
    const context = useContext(IngredientsContext);
 
    if (context === undefined) {
-      throw new Error('An error occured with the Ingredients Context');
+      throw new Error('An error occured during the ingredients process');
    }
 
    return context;
