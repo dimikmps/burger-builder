@@ -5,6 +5,7 @@ interface AuthContextType {
    login: (name: string, password: string) => Promise<void>;
    logout: () => void;
    error: Error | null;
+   clearError: () => void;
 }
 
 type AuthProviderProps = {
@@ -27,7 +28,11 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
          });
 
          if (!response.ok) {
-            throw new Error('Network error');
+            if (response.status === 401) {
+               throw new Error('Invalid credentials');
+            } else {
+               throw new Error('Error processing request');
+            }
          }
 
          const data = await response.json();
@@ -44,7 +49,13 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       setLoginToken(null);
    };
 
-   return <AuthContext.Provider value={{ loginToken, login, logout, error }}>{children}</AuthContext.Provider>;
+   const clearError = () => {
+      setError(null);
+   };
+
+   return (
+      <AuthContext.Provider value={{ loginToken, login, logout, error, clearError }}>{children}</AuthContext.Provider>
+   );
 };
 
 const useAuth = (): AuthContextType => {

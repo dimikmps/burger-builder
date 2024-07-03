@@ -61,12 +61,7 @@ const LoginFormComponent = (): React.JSX.Element => {
    };
 
    return (
-      <Box
-         width='100vw'
-         height='100vh'
-         display='flex'
-         justifyContent='space-around'
-      >
+      <Box width='100vw' height='100vh' display='flex' justifyContent='space-around'>
          <form onSubmit={handleSubmit} style={{ alignContent: 'center' }}>
             <Grid container spacing={2}>
                <Grid item xs={12}>

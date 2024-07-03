@@ -4,6 +4,7 @@ import { useIngredients } from '../../contexts/IngredientsContext';
 /**
  * Burger Component
  * Represents the burger preview, with all (if any) selected ingredients
+ * Any extra/new ingredients are added on top of any pre-selected ones
  * @returns {React.JSX.Element} - The BurgerComponent JSX element
  */
 const BurgerComponent = (): React.JSX.Element => {
